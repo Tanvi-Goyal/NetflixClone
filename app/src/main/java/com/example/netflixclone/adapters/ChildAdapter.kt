@@ -45,6 +45,7 @@ class ChildAdapter : RecyclerView.Adapter<BaseViewHolder<*>>() {
 
     override fun onBindViewHolder(holder: BaseViewHolder<*>, position: Int) {
         val element = childAdapterDataList[position]
+        
         when (holder) {
             is ChildVideoViewHolder -> holder.bind(element as ChildModel)
             is ChildImageViewHolder -> holder.bind(element as ChildModelTwo)
