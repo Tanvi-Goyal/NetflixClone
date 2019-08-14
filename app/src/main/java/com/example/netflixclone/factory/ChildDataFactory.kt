@@ -10,7 +10,7 @@ object ChildDataFactory {
 
     private val random = Random()
 
-    private val titles = arrayListOf("Aviator", "Now you can See me", "God Father", "Mission Impossible", "3 idiots")
+    private val titles = arrayListOf("1h 40m", "1h 15m", "2h 10m", "1h 50m", "2h 30m")
     private val images = arrayListOf(
         R.drawable.thumbnail_one,
         R.drawable.th_two,

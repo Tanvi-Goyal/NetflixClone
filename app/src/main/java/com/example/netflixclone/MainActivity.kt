@@ -22,15 +22,18 @@ import kotlin.collections.ArrayList
 class MainActivity : AppCompatActivity() {
 
     private var parentList: ArrayList<Any> = ArrayList()
-    private lateinit var recyclerList: List<ParentModel>
+    private lateinit var videoRecyclerList: List<ParentModel>
+    private lateinit var imageRecyclerList: List<ParentModel>
+
     private lateinit var videoList: List<VideoModel>
 
     lateinit var binding: com.example.netflixclone.databinding.ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ParentDataFactory.initialize(application)
-        recyclerList = ParentDataFactory.getParents(application, 40)
+        videoRecyclerList = ParentDataFactory.getParents(application, 40, 0)
+        imageRecyclerList = ParentDataFactory.getParents(application, 40, 1)
+
         videoList = VideoDataFactory.getChildren(application,40)
         binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
@@ -44,10 +47,10 @@ class MainActivity : AppCompatActivity() {
         val parentAdapter = ParentAdapter()
         binding.recyclerMain.adapter = parentAdapter
 
-        parentList.add(recyclerList.get(0))
+        parentList.add(videoRecyclerList.get(0))
         parentList.add(videoList.get(0))
-        parentList.add(recyclerList.get(1))
-        parentList.add(recyclerList.get(2))
+        parentList.add(imageRecyclerList.get(0))
+        parentList.add(videoRecyclerList.get(1))
         parentList.add(videoList.get(1))
 
         parentAdapter.adapterDataList = parentList

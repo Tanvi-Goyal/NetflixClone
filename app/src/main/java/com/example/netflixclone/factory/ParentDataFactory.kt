@@ -12,32 +12,22 @@ object ParentDataFactory{
 
     private val titles =  arrayListOf( "Now Playing", "Classic", "Comedy", "Thriller", "Action", "Horror", "TV Series")
 
-    private var childList: ArrayList<Any> = ArrayList()
-    private lateinit var videoList: List<ChildModel>
-    private lateinit var imageList: List<ChildModelTwo>
-
-    fun initialize(context: Context) {
-        videoList = ChildDataFactory.getChildren(context, 20)
-        imageList = ChildTwoDataFactory.getChildren(context,20)
-    }
-
     private fun randomTitle() : String{
         val index = random.nextInt(titles.size)
         return titles[index]
     }
 
-    private fun randomChildren(context: Context) : List<Any>{
+    private fun randomChildren(context: Context, type: Int) : List<Any>{
+        if(type == 0) {
+            return ChildDataFactory.getChildren(context, 20)
+        }else return ChildTwoDataFactory.getChildren(context,20)
 
-        childList.add(videoList.get(0))
-        childList.add(imageList.get(0))
-
-        return childList
     }
 
-    fun getParents(context: Context, count : Int) : List<ParentModel>{
+    fun getParents(context: Context, count : Int, type: Int) : List<ParentModel>{
         val parents = mutableListOf<ParentModel>()
         repeat(count){
-            val parent = ParentModel(randomTitle(), randomChildren(context))
+            val parent = ParentModel(randomTitle(), randomChildren(context,type))
             parents.add(parent)
         }
         return parents
