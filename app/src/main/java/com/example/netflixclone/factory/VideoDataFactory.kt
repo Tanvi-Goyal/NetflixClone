@@ -3,15 +3,13 @@ package com.example.netflixclone.factory
 import android.content.Context
 import androidx.core.content.ContextCompat
 import com.example.netflixclone.R
-import com.example.netflixclone.models.ChildModel
-import com.example.netflixclone.models.ParentModel
 import com.example.netflixclone.models.VideoModel
 import java.util.*
 
-object VideoDataFactory{
+object VideoDataFactory {
     private val random = Random()
 
-    private val titles =  arrayListOf( "Available  Now", "Trending", "Upcoming")
+    private val titles = arrayListOf("Available  Now", "Trending", "Upcoming")
 
     private val images = arrayListOf(
         R.drawable.thumbnail_one,
@@ -21,7 +19,7 @@ object VideoDataFactory{
         R.drawable.th_five
     )
 
-    private fun randomTitle() : String{
+    private fun randomTitle(): String {
         val index = random.nextInt(titles.size)
         return titles[index]
     }
@@ -34,7 +32,7 @@ object VideoDataFactory{
     fun getChildren(context: Context, count: Int): List<VideoModel> {
         val children = mutableListOf<VideoModel>()
         repeat(count) {
-            val child = VideoModel(randomTitle(),ContextCompat.getDrawable(context, randomImage()))
+            val child = VideoModel(randomTitle(), ContextCompat.getDrawable(context, randomImage()))
             children.add(child)
         }
         return children

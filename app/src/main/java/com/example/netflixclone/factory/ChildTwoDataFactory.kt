@@ -3,7 +3,6 @@ package com.example.netflixclone.factory
 import android.content.Context
 import androidx.core.content.ContextCompat
 import com.example.netflixclone.R
-import com.example.netflixclone.models.ChildModel
 import com.example.netflixclone.models.ChildModelTwo
 import java.util.*
 

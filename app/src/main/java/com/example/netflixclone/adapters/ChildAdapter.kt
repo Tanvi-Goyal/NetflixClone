@@ -1,79 +1,15 @@
 package com.example.netflixclone.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.netflixclone.BaseViewHolder
-import com.example.netflixclone.R
-import com.example.netflixclone.databinding.SubItemBinding
-import com.example.netflixclone.databinding.SubRecyclerBinding
 import com.example.netflixclone.databinding.SubRecyclerItemOneBinding
 import com.example.netflixclone.databinding.SubRecyclerItemTwoBinding
 import com.example.netflixclone.models.ChildModel
 import com.example.netflixclone.models.ChildModelTwo
-import com.example.netflixclone.models.ParentModel
-import com.example.netflixclone.models.VideoModel
-import kotlinx.android.synthetic.main.sub_recycler_item_one.view.*
-import kotlinx.android.synthetic.main.sub_recycler_item_two.view.*
-
 
 class ChildAdapter : RecyclerView.Adapter<BaseViewHolder<*>>() {
-
-    //    override fun onCreateViewHolder(parent: ViewGroup,
-//                                    viewType: Int): ViewHolder {
-//
-//        val v =  LayoutInflater.from(parent.context)
-//            .inflate(R.layout.sub_recycler_item_one,parent,false)
-//        return ViewHolder(v)
-//    }
-//
-//    override fun getItemCount(): Int {
-//        return children.size
-//    }
-//
-//    override fun onBindViewHolder(holder: ViewHolder,
-//                                   position: Int) {
-//        val child = children[position]
-//        holder.imageView.setImageResource(child.image)
-//    }
-//
-//    inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
-//
-//        val imageView: ImageView = itemView.image_type_one
-//
-//    }
-//
-
-    //    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder{
-//        return ViewHolder(SubRecyclerItemOneBinding.inflate(LayoutInflater.from(parent?.context), parent, false))
-//    }
-//
-//    var items = listOf<ChildModel>()
-//        set(value) {
-//            field = value
-//            notifyDataSetChanged()
-//        }
-//
-//    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        holder.bind(items[position])
-//    }
-//
-//    override fun getItemCount(): Int = items.size
-//
-//
-//    inner class ViewHolder(private val itemBinding: SubRecyclerItemOneBinding) : RecyclerView.ViewHolder(itemBinding.root) {
-//        fun bind(itemViewModel: ChildModel) {
-//            itemBinding.childviewmodelone = itemViewModel
-//            itemBinding.executePendingBindings()
-//
-//        }
-//
-//    }
 
     var childAdapterDataList: List<Any> = emptyList()
 
